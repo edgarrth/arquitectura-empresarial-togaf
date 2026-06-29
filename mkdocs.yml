@@ -64,4 +64,10 @@ nav:
       - ADR-002 Event Platform: 15-adrs/ADR-002-event-platform.md
       - ADR-003 API Management: 15-adrs/ADR-003-api-management.md
   - Roadmap:
-      - Enterprise Roadmap: 19-roadmap/enterprise-roadmap.md
+      - Enterprise Roadmap: 19-roadmap/enterprise-roadmap.md      
+  - Diagramas:
+      - Contexto de arquitectura: 16-diagrams/mermaid/architecture-context.md
+  - Plantillas:
+      - ADR Template: 17-templates/ADR-template.md
+  - Decisiones:
+      - Technology Radar: 18-decisions/technology-radar.md
