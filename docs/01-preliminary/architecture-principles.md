@@ -15,6 +15,4 @@
 | P-09 | Resiliencia explícita | Los sistemas financieros deben tolerar fallas parciales | Se requieren timeouts, retries, circuit breakers e idempotencia |
 | P-10 | Cumplimiento trazable | Controles regulatorios deben evidenciarse | Las evidencias deben ser auditables |
 
-# Uso
 
-Estos principios son criterios de decisión. Cuando haya conflicto entre alternativas, el Architecture Board debe usar estos principios como guía.

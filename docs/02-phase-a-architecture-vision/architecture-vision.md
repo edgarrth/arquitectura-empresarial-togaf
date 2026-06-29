@@ -2,7 +2,9 @@
 
 # Problema
 
-La organización financiera opera con sistemas core, canales digitales, integraciones con terceros, procesos batch y plataformas de datos que han crecido de manera heterogénea. Esto genera:
+La organización opera con sistemas core, canales digitales, 
+integraciones con terceros, procesos batch y plataformas de datos que han 
+crecido de manera heterogénea. Esto genera:
 
 - time-to-market lento;
 - duplicidad de capacidades;
@@ -14,7 +16,9 @@ La organización financiera opera con sistemas core, canales digitales, integrac
 
 # Visión objetivo
 
-Construir una arquitectura empresarial modular, segura, observable y orientada a capacidades, que permita acelerar productos financieros digitales, mejorar resiliencia operativa y reducir riesgo tecnológico.
+Construir una arquitectura empresarial modular, segura, observable y orientada 
+a capacidades, que permita acelerar productos financieros digitales, 
+mejorar resiliencia operativa y reducir riesgo tecnológico.
 
 # Drivers de negocio
 

@@ -2,7 +2,8 @@
 
 # Misión
 
-Establecer una función de arquitectura empresarial que conecte estrategia, ejecución y gobierno tecnológico para una organización financiera.
+Establecer una función de arquitectura empresarial que conecte estrategia, 
+ejecución y gobierno tecnológico para la organizacion
 
 # Alcance
 
@@ -57,3 +58,5 @@ flowchart TD
 - Reducción de aplicaciones redundantes.
 - Reducción de incidentes por falta de observabilidad.
 - Tiempo promedio de onboarding de un nuevo microservicio.
+
+#pendiente: agregar foluma de metricas

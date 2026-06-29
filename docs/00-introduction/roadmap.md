@@ -1,10 +1,4 @@
-# Guía de uso
-
-# Enfoque
-
-Este repositorio está pensado como base para implementaciones futuras de arquitectura empresarial. No debe tratarse como una documentación estática, sino como un sistema vivo de gobierno y diseño.
-
-# Forma recomendada de adopción
+# Plan de adopción
 
 ## Semana 1: Preparación
 
@@ -29,7 +23,3 @@ Este repositorio está pensado como base para implementaciones futuras de arquit
 - Integrar revisiones arquitectónicas en el SDLC.
 - Definir métricas de adopción.
 - Publicar GitHub Pages.
-
-# Regla de oro
-
-La arquitectura debe reducir riesgo y acelerar delivery. Si un documento no ayuda a tomar decisiones, gobernar cambios o reducir ambigüedad, debe simplificarse.
