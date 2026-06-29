@@ -1,0 +1,67 @@
+site_name: TOGAF Financial Enterprise Architecture Blueprint
+site_description: Practical TOGAF ADM implementation for a financial services enterprise
+repo_url: https://github.com/your-org/togaf-financial-enterprise-architecture
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.highlight
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+nav:
+  - Inicio: index.md
+  - Introducción:
+      - Guía de uso: 00-introduction/how-to-use.md
+      - Mapa ADM: 00-introduction/adm-map.md
+  - Preliminary:
+      - Capability de arquitectura: 01-preliminary/architecture-capability.md
+      - Principios: 01-preliminary/architecture-principles.md
+  - Phase A:
+      - Architecture Vision: 02-phase-a-architecture-vision/architecture-vision.md
+      - Stakeholders: 02-phase-a-architecture-vision/stakeholder-map.md
+  - Phase B:
+      - Business Architecture: 03-phase-b-business-architecture/business-architecture.md
+      - Capability Map: 03-phase-b-business-architecture/business-capability-map.md
+  - Phase C Data:
+      - Data Architecture: 04-phase-c-data-architecture/data-architecture.md
+      - Data Governance: 04-phase-c-data-architecture/data-governance.md
+  - Phase C Application:
+      - Application Architecture: 05-phase-c-application-architecture/application-architecture.md
+      - Integration Architecture: 05-phase-c-application-architecture/integration-architecture.md
+  - Phase D:
+      - Technology Architecture: 06-phase-d-technology-architecture/technology-architecture.md
+      - Platform Architecture: 06-phase-d-technology-architecture/platform-architecture.md
+  - Phase E:
+      - Opportunities & Solutions: 07-phase-e-opportunities-solutions/opportunities-solutions.md
+  - Phase F:
+      - Migration Planning: 08-phase-f-migration-planning/migration-planning.md
+  - Phase G:
+      - Implementation Governance: 09-phase-g-implementation-governance/implementation-governance.md
+  - Phase H:
+      - Change Management: 10-phase-h-architecture-change-management/change-management.md
+  - Requirements:
+      - Requirements Management: 11-requirements-management/requirements-management.md
+  - Seguridad:
+      - Security Architecture: 12-security-architecture/security-architecture.md
+      - IAM & CIAM: 12-security-architecture/iam-ciam.md
+  - Gobierno:
+      - Architecture Board: 13-governance/architecture-board.md
+      - Review Checklist: 13-governance/architecture-review-checklist.md
+  - Estándares:
+      - API Standards: 14-standards/api-standards.md
+      - Event Standards: 14-standards/event-standards.md
+      - Observability Standards: 14-standards/observability-standards.md
+  - ADRs:
+      - ADR-001 CIAM: 15-adrs/ADR-001-ciam-platform.md
+      - ADR-002 Event Platform: 15-adrs/ADR-002-event-platform.md
+      - ADR-003 API Management: 15-adrs/ADR-003-api-management.md
+  - Roadmap:
+      - Enterprise Roadmap: 19-roadmap/enterprise-roadmap.md

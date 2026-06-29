@@ -1,0 +1,26 @@
+@startuml
+!theme plain
+title Enterprise Financial Architecture - Context
+
+actor "Customer" as Customer
+actor "Merchant" as Merchant
+actor "Operations User" as Ops
+rectangle "Financial Services Enterprise" {
+  [Digital Channels] as Channels
+  [API Platform] as API
+  [CIAM] as CIAM
+  [Domain Services] as Domain
+  [Event Platform] as Events
+  [Data Platform] as Data
+  [Core / Processor] as Core
+}
+Customer --> Channels
+Merchant --> API
+Ops --> Domain
+Channels --> API
+API --> CIAM
+API --> Domain
+Domain --> Events
+Domain --> Core
+Events --> Data
+@enduml
