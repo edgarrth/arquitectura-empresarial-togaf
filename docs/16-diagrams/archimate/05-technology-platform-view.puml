@@ -1,0 +1,50 @@
+@startuml
+!include <archimate/Archimate>
+title Technology Platform View
+
+left to right direction
+
+BusinessActor(developer, "Developer")
+ApplicationComponent(dev_portal, "Developer Portal")
+ApplicationComponent(git_repo, "Git Repositories")
+ApplicationComponent(ci, "CI Pipeline")
+ApplicationComponent(registry, "Artifact Registry")
+ApplicationComponent(gitops, "GitOps Controller")
+ApplicationComponent(api_mgmt, "API Management")
+ApplicationComponent(obs, "Observability Stack")
+ApplicationComponent(secret_mgmt, "Secrets / KMS")
+ApplicationComponent(policy, "Policy as Code")
+
+Node(k8s, "Kubernetes Platform")
+Node(data_runtime, "Managed Data Services")
+Node(event_runtime, "Event Streaming Runtime")
+Node(network, "Cloud Network / Connectivity")
+
+TechnologyService(container_runtime, "Container Runtime")
+TechnologyService(service_mesh, "Service Mesh / mTLS")
+TechnologyService(logging, "Logging")
+TechnologyService(metrics, "Metrics")
+TechnologyService(tracing, "Tracing")
+TechnologyService(secret_service, "Secret Management")
+TechnologyService(policy_service, "Admission Policies")
+
+Rel_Flow(developer, dev_portal)
+Rel_Flow(dev_portal, git_repo)
+Rel_Flow(git_repo, ci)
+Rel_Flow(ci, registry)
+Rel_Flow(ci, gitops)
+Rel_Flow(gitops, k8s)
+
+Rel_Serving(k8s, container_runtime)
+Rel_Serving(k8s, service_mesh)
+Rel_Serving(obs, logging)
+Rel_Serving(obs, metrics)
+Rel_Serving(obs, tracing)
+Rel_Serving(secret_mgmt, secret_service)
+Rel_Serving(policy, policy_service)
+
+Rel_Serving(container_runtime, api_mgmt)
+Rel_Serving(container_runtime, event_runtime)
+Rel_Serving(container_runtime, data_runtime)
+Rel_Serving(network, k8s)
+@enduml

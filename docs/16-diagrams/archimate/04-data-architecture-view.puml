@@ -1,0 +1,49 @@
+@startuml
+!include <archimate/Archimate>
+title Data Architecture View
+
+left to right direction
+
+ApplicationComponent(core, "Core / procesador")
+ApplicationComponent(domain_services, "Servicios de dominio")
+ApplicationComponent(cdc_outbox, "CDC / Transactional Outbox")
+ApplicationComponent(event_platform, "Event Platform")
+ApplicationComponent(ods, "Operational Data Store")
+ApplicationComponent(lakehouse, "Data Lakehouse")
+ApplicationComponent(dwh, "Data Warehouse")
+ApplicationComponent(feature_store, "Feature Store")
+ApplicationComponent(bi, "BI / Reporting")
+ApplicationComponent(ml, "Modelos IA / Riesgo")
+
+DataObject(customer_data, "Datos de cliente")
+DataObject(transaction_data, "Datos transaccionales")
+DataObject(merchant_data, "Datos de comercio")
+DataObject(risk_data, "Datos de riesgo")
+DataObject(audit_data, "Datos de auditoría")
+DataObject(data_product, "Data Product gobernado")
+
+BusinessObject(data_policy, "Política de datos")
+BusinessObject(data_catalog, "Catálogo / glosario")
+BusinessObject(data_lineage, "Linaje de datos")
+
+Rel_Access(core, transaction_data)
+Rel_Access(domain_services, customer_data)
+Rel_Access(domain_services, merchant_data)
+Rel_Access(domain_services, risk_data)
+Rel_Access(cdc_outbox, transaction_data)
+Rel_Flow(core, cdc_outbox)
+Rel_Flow(domain_services, event_platform)
+Rel_Flow(cdc_outbox, event_platform)
+Rel_Flow(event_platform, ods)
+Rel_Flow(event_platform, lakehouse)
+Rel_Flow(lakehouse, dwh)
+Rel_Flow(lakehouse, feature_store)
+Rel_Flow(dwh, bi)
+Rel_Flow(feature_store, ml)
+
+Rel_Access(lakehouse, audit_data)
+Rel_Access(lakehouse, data_product)
+Rel_Association(data_policy, data_product)
+Rel_Association(data_catalog, data_product)
+Rel_Association(data_lineage, data_product)
+@enduml

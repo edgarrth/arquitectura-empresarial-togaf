@@ -1,5 +1,101 @@
-.site/
+# ==========================================
+# 1. Específico de IntelliJ IDEA / JetBrains
+# ==========================================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+gen/
+# Evita subir reportes de cobertura de código locales
+.exec
+.coverage
+
+# ==========================================
+# 2. Java / Kotlin (Maven y Gradle)
+# ==========================================
+# Carpetas de compilación
+target/
+build/
+.gradle/
+bin/
+
+# Logs de Gradle y archivos de configuración local
+.gradletasknamecache
+.astubphy
+
+# Archivos de empaquetado
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Herramientas de Maven y Gradle (opcional, actívalo si prefieres no subirlos)
+# mvnw
+# mvnw.cmd
+# .mvn/
+# gradlew
+# gradlew.bat
+# gradle/wrapper/
+
+# ==========================================
+# 3. Python (Virtual Envs, Caché y Compilados)
+# ==========================================
+# Archivos compilados de Python
 __pycache__/
-*.pyc
-.DS_Store
+*.py[cod]
+*$py.class
+
+# Entornos virtuales (Nombres más comunes)
+venv/
+.venv/
+env/
+.env/
+ENV/
+pip-wheel-metadata/
+
+# Herramientas de tipado y testing en Python
+.pytest_cache/
+.mypy_cache/
+.tox/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+
+# ==========================================
+# 4. Node.js y TypeScript
+# ==========================================
+# Dependencias
+node_modules/
+jspm_packages/
+
+# Carpeta de salida de compilación de TypeScript (ajusta si usas 'dist')
+build/
+dist/
+out-tsc/
+
+# Logs de error de npm y yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Caché de herramientas de TypeScript/Linter
+.eslintcache
+.tsbuildinfo
+
+# ==========================================
+# 5. Archivos del Sistema y Variables de Entorno
+# ==========================================
+# NUNCA subas tus credenciales o tokens
 .env
+.env.local
+.env.*.local
+*.env
+
+# Archivos basura del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini

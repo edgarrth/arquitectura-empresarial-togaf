@@ -1,0 +1,59 @@
+@startuml
+!include <archimate/Archimate>
+title Security & IAM View
+
+left to right direction
+
+BusinessActor(customer, "Cliente")
+BusinessActor(employee, "Colaborador")
+BusinessActor(merchant, "Comercio")
+BusinessRole(customer_role, "Usuario digital")
+BusinessRole(admin_role, "Usuario administrativo")
+BusinessRole(merchant_role, "Usuario comercio")
+
+ApplicationComponent(canal, "Canal digital")
+ApplicationComponent(ciam, "CIAM")
+ApplicationComponent(iam, "IAM corporativo")
+ApplicationComponent(api_gateway, "API Gateway")
+ApplicationComponent(domain_services, "Servicios de dominio")
+ApplicationComponent(audit, "Audit / SIEM")
+ApplicationComponent(secrets, "Secrets / KMS")
+
+ApplicationService(authn, "Autenticación")
+ApplicationService(authz, "Autorización")
+ApplicationService(mfa, "MFA / Passwordless")
+ApplicationService(consent, "Gestión de consentimiento")
+ApplicationService(token_service, "Token service")
+ApplicationService(audit_service, "Auditoría de seguridad")
+
+DataObject(identity_data, "Identidad digital")
+DataObject(consent_data, "Consentimientos")
+DataObject(audit_event, "Eventos de auditoría")
+DataObject(secret_data, "Secretos / llaves")
+
+Rel_Assignment(customer, customer_role)
+Rel_Assignment(employee, admin_role)
+Rel_Assignment(merchant, merchant_role)
+
+Rel_Flow(customer_role, canal)
+Rel_Flow(merchant_role, canal)
+Rel_Flow(canal, ciam)
+Rel_Flow(employee, iam)
+Rel_Flow(ciam, api_gateway)
+Rel_Flow(iam, api_gateway)
+Rel_Flow(api_gateway, domain_services)
+Rel_Flow(domain_services, audit)
+
+Rel_Serving(ciam, authn)
+Rel_Serving(ciam, authz)
+Rel_Serving(ciam, mfa)
+Rel_Serving(ciam, consent)
+Rel_Serving(ciam, token_service)
+Rel_Serving(audit, audit_service)
+
+Rel_Access(ciam, identity_data)
+Rel_Access(ciam, consent_data)
+Rel_Access(audit, audit_event)
+Rel_Access(secrets, secret_data)
+Rel_Serving(secrets, domain_services)
+@enduml

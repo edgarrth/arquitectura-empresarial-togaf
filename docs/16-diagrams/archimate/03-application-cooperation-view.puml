@@ -1,0 +1,53 @@
+@startuml
+!include <archimate/Archimate>
+title Application Cooperation View
+
+left to right direction
+
+ApplicationComponent(web_mobile, "Canales web/mobile")
+ApplicationComponent(api_gateway, "API Management / Gateway")
+ApplicationComponent(ciam, "CIAM")
+ApplicationComponent(customer_service, "Customer Domain Service")
+ApplicationComponent(card_service, "Card Domain Service")
+ApplicationComponent(payment_service, "Payment Domain Service")
+ApplicationComponent(merchant_service, "Merchant Domain Service")
+ApplicationComponent(risk_service, "Risk Decisioning Service")
+ApplicationComponent(fraud_service, "Fraud Monitoring Service")
+ApplicationComponent(reconciliation_service, "Reconciliation Service")
+ApplicationComponent(event_platform, "Event Streaming Platform")
+ApplicationComponent(core, "Core financiero / procesador")
+ApplicationComponent(data_platform, "Data Platform")
+
+ApplicationService(identity_api, "Identity API")
+ApplicationService(customer_api, "Customer API")
+ApplicationService(card_api, "Card API")
+ApplicationService(payment_api, "Payment API")
+ApplicationService(merchant_api, "Merchant API")
+ApplicationService(risk_api, "Risk API")
+ApplicationService(event_service, "Business Event Service")
+ApplicationService(data_service, "Data Products")
+
+Rel_Serving(api_gateway, web_mobile)
+Rel_Serving(ciam, identity_api)
+Rel_Serving(customer_service, customer_api)
+Rel_Serving(card_service, card_api)
+Rel_Serving(payment_service, payment_api)
+Rel_Serving(merchant_service, merchant_api)
+Rel_Serving(risk_service, risk_api)
+Rel_Serving(event_platform, event_service)
+Rel_Serving(data_platform, data_service)
+
+Rel_Flow(web_mobile, api_gateway)
+Rel_Flow(api_gateway, ciam)
+Rel_Flow(api_gateway, customer_service)
+Rel_Flow(api_gateway, card_service)
+Rel_Flow(api_gateway, payment_service)
+Rel_Flow(api_gateway, merchant_service)
+Rel_Flow(payment_service, risk_service)
+Rel_Flow(payment_service, fraud_service)
+Rel_Flow(payment_service, core)
+Rel_Flow(payment_service, event_platform)
+Rel_Flow(merchant_service, event_platform)
+Rel_Flow(reconciliation_service, core)
+Rel_Flow(event_platform, data_platform)
+@enduml

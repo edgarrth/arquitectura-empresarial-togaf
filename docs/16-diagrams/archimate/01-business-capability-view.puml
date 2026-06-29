@@ -1,0 +1,57 @@
+@startuml
+!include <archimate/Archimate>
+title Business Capability View - Financial Enterprise
+
+left to right direction
+
+BusinessActor(customer, "Cliente")
+BusinessActor(merchant, "Comercio afiliado")
+BusinessActor(ops, "Operaciones")
+BusinessActor(risk, "Riesgos")
+BusinessActor(compliance, "Compliance")
+
+BusinessService(digital_service, "Servicios financieros digitales")
+BusinessService(merchant_service, "Servicios para comercios")
+BusinessService(risk_service, "Gestión de riesgo y fraude")
+BusinessService(operations_service, "Operación financiera")
+
+BusinessProcess(onboarding, "Onboarding digital")
+BusinessProcess(payments, "Procesamiento de pagos")
+BusinessProcess(merchant_onboarding, "Afiliación de comercios")
+BusinessProcess(reconciliation, "Conciliación y liquidación")
+BusinessProcess(fraud_monitoring, "Monitoreo antifraude")
+BusinessProcess(customer_support, "Atención y reclamos")
+
+BusinessFunction(customer_mgmt, "Gestión de clientes")
+BusinessFunction(product_mgmt, "Gestión de productos financieros")
+BusinessFunction(payment_mgmt, "Gestión de pagos")
+BusinessFunction(merchant_mgmt, "Gestión de comercios")
+BusinessFunction(risk_mgmt, "Gestión de riesgo")
+BusinessFunction(data_mgmt, "Gobierno de datos")
+BusinessFunction(platform_mgmt, "Plataforma tecnológica")
+
+Rel_Assignment(customer, digital_service)
+Rel_Assignment(merchant, merchant_service)
+Rel_Assignment(ops, operations_service)
+Rel_Assignment(risk, risk_service)
+Rel_Assignment(compliance, risk_service)
+
+Rel_Serving(digital_service, customer)
+Rel_Serving(merchant_service, merchant)
+Rel_Serving(risk_service, ops)
+Rel_Serving(operations_service, ops)
+
+Rel_Composition(customer_mgmt, onboarding)
+Rel_Composition(payment_mgmt, payments)
+Rel_Composition(merchant_mgmt, merchant_onboarding)
+Rel_Composition(payment_mgmt, reconciliation)
+Rel_Composition(risk_mgmt, fraud_monitoring)
+Rel_Composition(customer_mgmt, customer_support)
+
+Rel_Serving(customer_mgmt, digital_service)
+Rel_Serving(payment_mgmt, digital_service)
+Rel_Serving(merchant_mgmt, merchant_service)
+Rel_Serving(risk_mgmt, risk_service)
+Rel_Serving(data_mgmt, risk_service)
+Rel_Serving(platform_mgmt, digital_service)
+@enduml

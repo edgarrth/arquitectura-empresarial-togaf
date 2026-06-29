@@ -1,0 +1,59 @@
+@startuml
+!include <archimate/Archimate>
+title Migration Roadmap View
+
+left to right direction
+
+Plateau(current, "Baseline Architecture")
+Plateau(foundation, "Transition Architecture 1: Foundation")
+Plateau(domain_modernization, "Transition Architecture 2: Domain Modernization")
+Plateau(target, "Target Architecture")
+
+Gap(gap_api, "APIs no gobernadas")
+Gap(gap_obs, "Observabilidad insuficiente")
+Gap(gap_identity, "Identidad fragmentada")
+Gap(gap_data, "Datos sin ownership")
+Gap(gap_core, "Acoplamiento con core legado")
+
+WorkPackage(wp_governance, "Architecture Governance")
+WorkPackage(wp_api, "API Management")
+WorkPackage(wp_observability, "Observability Foundation")
+WorkPackage(wp_ciam, "CIAM")
+WorkPackage(wp_events, "Event Platform")
+WorkPackage(wp_data, "Data Governance")
+WorkPackage(wp_domains, "Customer / Payment Domain Services")
+
+Deliverable(d1, "Principios y Architecture Board")
+Deliverable(d2, "API Gateway y catálogo")
+Deliverable(d3, "Dashboards, logs, métricas y trazas")
+Deliverable(d4, "OIDC, MFA y gestión de sesiones")
+Deliverable(d5, "Eventos versionados")
+Deliverable(d6, "Dominios de datos y owners")
+Deliverable(d7, "Servicios dominio desacoplados")
+
+Rel_Association(current, gap_api)
+Rel_Association(current, gap_obs)
+Rel_Association(current, gap_identity)
+Rel_Association(current, gap_data)
+Rel_Association(current, gap_core)
+
+Rel_Realization(wp_governance, d1)
+Rel_Realization(wp_api, d2)
+Rel_Realization(wp_observability, d3)
+Rel_Realization(wp_ciam, d4)
+Rel_Realization(wp_events, d5)
+Rel_Realization(wp_data, d6)
+Rel_Realization(wp_domains, d7)
+
+Rel_Triggering(current, foundation)
+Rel_Triggering(foundation, domain_modernization)
+Rel_Triggering(domain_modernization, target)
+
+Rel_Association(wp_governance, foundation)
+Rel_Association(wp_api, foundation)
+Rel_Association(wp_observability, foundation)
+Rel_Association(wp_ciam, foundation)
+Rel_Association(wp_events, domain_modernization)
+Rel_Association(wp_data, domain_modernization)
+Rel_Association(wp_domains, target)
+@enduml

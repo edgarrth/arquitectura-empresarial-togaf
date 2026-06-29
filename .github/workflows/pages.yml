@@ -23,6 +23,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Java for PlantUML
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -30,7 +36,21 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install mkdocs-material pymdown-extensions
+          pip install "mkdocs-material<10" "mkdocs<2" pymdown-extensions
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+          curl -L -o plantuml.jar https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar
+
+      - name: Render PlantUML and ArchiMate diagrams
+        run: |
+          mkdir -p docs/assets/diagrams/archimate
+          mkdir -p docs/assets/diagrams/plantuml
+          if ls docs/16-diagrams/archimate/*.puml 1> /dev/null 2>&1; then
+            java -jar plantuml.jar -tsvg -o ../../assets/diagrams/archimate docs/16-diagrams/archimate/*.puml
+          fi
+          if ls docs/16-diagrams/plantuml/*.puml 1> /dev/null 2>&1; then
+            java -jar plantuml.jar -tsvg -o ../../assets/diagrams/plantuml docs/16-diagrams/plantuml/*.puml
+          fi
 
       - name: Build MkDocs site
         run: |

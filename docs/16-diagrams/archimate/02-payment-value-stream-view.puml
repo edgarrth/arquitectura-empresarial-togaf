@@ -1,0 +1,52 @@
+@startuml
+!include <archimate/Archimate>
+title Payment Value Stream View
+
+left to right direction
+
+BusinessActor(customer, "Cliente")
+BusinessActor(merchant, "Comercio")
+BusinessActor(card_network, "Red / marca de tarjeta")
+BusinessActor(issuer_processor, "Procesador / core")
+
+BusinessProcess(initiate, "Iniciar pago")
+BusinessProcess(authenticate, "Autenticar / tokenizar")
+BusinessProcess(authorize, "Autorizar transacción")
+BusinessProcess(fraud_check, "Evaluar fraude")
+BusinessProcess(capture, "Capturar operación")
+BusinessProcess(confirm, "Confirmar pago")
+BusinessProcess(reconcile, "Conciliar")
+BusinessProcess(settle, "Liquidar")
+
+BusinessObject(payment_order, "Orden de pago")
+BusinessObject(authorization, "Autorización")
+BusinessObject(risk_decision, "Decisión de riesgo")
+BusinessObject(settlement, "Liquidación")
+
+BusinessService(payment_service, "Servicio de pago")
+BusinessService(fraud_service, "Servicio antifraude")
+BusinessService(settlement_service, "Servicio de liquidación")
+
+Rel_Triggering(customer, initiate)
+Rel_Triggering(initiate, authenticate)
+Rel_Triggering(authenticate, fraud_check)
+Rel_Triggering(fraud_check, authorize)
+Rel_Triggering(authorize, capture)
+Rel_Triggering(capture, confirm)
+Rel_Triggering(confirm, reconcile)
+Rel_Triggering(reconcile, settle)
+
+Rel_Access(initiate, payment_order)
+Rel_Access(authorize, authorization)
+Rel_Access(fraud_check, risk_decision)
+Rel_Access(settle, settlement)
+
+Rel_Serving(payment_service, initiate)
+Rel_Serving(payment_service, authorize)
+Rel_Serving(fraud_service, fraud_check)
+Rel_Serving(settlement_service, settle)
+
+Rel_Association(merchant, initiate)
+Rel_Association(card_network, authorize)
+Rel_Association(issuer_processor, authorize)
+@enduml

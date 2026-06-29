@@ -67,6 +67,7 @@ nav:
       - Enterprise Roadmap: 19-roadmap/enterprise-roadmap.md      
   - Diagramas:
       - Contexto de arquitectura: 16-diagrams/mermaid/architecture-context.md
+      - Vistas ArchiMate: 16-diagrams/archimate/archimate-views.md
   - Plantillas:
       - ADR Template: 17-templates/ADR-template.md
   - Decisiones:
