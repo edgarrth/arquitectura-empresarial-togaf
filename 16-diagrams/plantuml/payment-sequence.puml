@@ -1,0 +1,22 @@
+@startuml
+title Payment Authorization - Sequence
+
+actor Customer
+participant "Digital Channel" as Channel
+participant "API Gateway" as Gateway
+participant "Payment Service" as Payment
+participant "Fraud Service" as Fraud
+participant "Core Processor" as Core
+participant "Event Platform" as EventBus
+
+Customer -> Channel: Confirm payment
+Channel -> Gateway: POST /v1/payments
+Gateway -> Payment: Forward request with identity
+Payment -> Fraud: Evaluate transaction
+Fraud --> Payment: Risk decision
+Payment -> Core: Authorize payment
+Core --> Payment: Authorization result
+Payment -> EventBus: payments.authorization.approved.v1
+Payment --> Gateway: Payment status
+Gateway --> Channel: Response
+@enduml
