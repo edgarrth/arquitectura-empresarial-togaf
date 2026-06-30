@@ -31,13 +31,13 @@ bin/
 *.zip
 *.tar.gz
 
-# Herramientas de Maven y Gradle (opcional, actívalo si prefieres no subirlos)
-# mvnw
-# mvnw.cmd
-# .mvn/
-# gradlew
-# gradlew.bat
-# gradle/wrapper/
+# Herramientas de Maven y Gradle
+mvnw
+mvnw.cmd
+.mvn/
+gradlew
+gradlew.bat
+gradle/wrapper/
 
 # ==========================================
 # 3. Python (Virtual Envs, Caché y Compilados)
