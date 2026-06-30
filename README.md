@@ -57,6 +57,133 @@ Organización financiera con:
 - Observabilidad obligatoria para servicios críticos.
 - Desacoplamiento progresivo del core legado.
 
+# Generación de diagramas
+
+Este repositorio utiliza múltiples notaciones de diagramas según el tipo de arquitectura o artefacto documentado.
+
+## Tecnologías utilizadas
+
+| Tipo de diagrama | Herramienta | Formato fuente | Output |
+|---|---|---|---|
+| Enterprise Architecture (TOGAF) | ArchiMate + PlantUML | `.puml` | `.svg` |
+| Diagramas UML | PlantUML | `.puml` | `.svg` |
+| Diagramas C4 | (Opcional) Structurizr / PlantUML | DSL / `.puml` | `.svg` |
+| Flujos simples / Roadmaps | Mermaid | Markdown | Render en navegador |
+| Secuencias rápidas | Mermaid / PlantUML | Markdown / `.puml` | Browser / `.svg` |
+
+
+## 1. ArchiMate
+
+Los diagramas de arquitectura empresarial (TOGAF) se modelan usando ArchiMate sobre PlantUML.
+
+Ubicación de archivos fuente:
+
+```text
+docs/15-diagrams/archimate/
+```
+
+Ejemplo:
+
+```plantuml
+@startuml
+!include <archimate/Archimate>
+
+Application_Component(api, "API Gateway")
+Technology_Node(k8s, "Kubernetes")
+Rel_Serving(api, k8s)
+
+@enduml
+```
+
+Estos archivos NO son imágenes; son código declarativo.
+
+## 2. PlantUML
+
+PlantUML convierte archivos `.puml` a imágenes.
+
+Flujo:
+
+```text
+.puml → PlantUML parser → SVG / PNG
+```
+
+Ejemplo de render manual:
+
+```bash
+java -jar plantuml.jar -tsvg diagram.puml
+```
+
+En CI/CD se usa Docker:
+
+```bash
+docker run --rm \
+  -v "$PWD:/workspace" \
+  -w /workspace \
+  plantuml/plantuml \
+  -tsvg \
+  docs/15-diagrams/archimate/*.puml
+```
+
+Esto genera archivos SVG en:
+
+```text
+docs/assets/diagrams/archimate/
+```
+
+Ejemplo de output:
+
+```text
+05-technology-platform-view.svg
+```
+
+## 3. Mermaid
+
+Mermaid se usa para diagramas simples embebidos en Markdown:
+
+- flowcharts
+- sequence diagrams
+- timelines
+- roadmaps
+- governance workflows
+
+Ejemplo:
+
+```mermaid
+flowchart LR
+    A --> B
+    B --> C
+```
+
+Mermaid NO genera archivos SVG durante el build.
+
+El render ocurre directamente en el navegador mediante JavaScript durante la carga de GitHub Pages.
+
+## 4. Cómo MkDocs muestra los diagramas
+
+### Diagramas generados como SVG (PlantUML / ArchiMate)
+
+Se referencian como imágenes:
+
+```md
+![Technology Platform View](../assets/diagrams/archimate/05-technology-platform-view.svg)
+```
+
+Flujo:
+
+```text
+.puml → SVG → MkDocs → GitHub Pages
+```
+
+### Diagramas Mermaid
+
+Se embeben inline:
+
+````markdown
+```mermaid
+flowchart TD
+A --> B
+```
+
 ## Quick start
 
 ```bash
@@ -64,6 +191,6 @@ pip install mkdocs-material
 mkdocs serve
 ```
 
-## Diagramas ArchiMate
+# Publicacion 
 
-El repositorio incluye vistas ArchiMate en `docs/15-diagrams/archimate`. El workflow de GitHub Actions las renderiza a SVG y las publica en GitHub Pages.
+El workflow de GitHub Actions las renderiza a SVG y las publica todo el contenido del repo en GitHub Pages.
