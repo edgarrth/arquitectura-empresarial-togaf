@@ -24,19 +24,7 @@
 
 # Arquitectura lógica
 
-```mermaid
-flowchart TD
-    SRC[Sistemas operacionales] --> CDC[CDC / Outbox]
-    SRC --> API[APIs transaccionales]
-    CDC --> STREAM[Event Streaming]
-    API --> STREAM
-    STREAM --> LAKE[Data Lakehouse]
-    STREAM --> ODS[Operational Data Store]
-    LAKE --> DWH[Data Warehouse]
-    LAKE --> ML[Feature Store / ML]
-    DWH --> BI[BI / Reporting]
-    ODS --> OPS[Dashboards operativos]
-```
+![Data Architecture View](../assets/diagrams/archimate/04-data-architecture-view.svg)
 
 # Reglas críticas
 

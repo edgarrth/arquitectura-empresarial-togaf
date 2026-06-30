@@ -21,23 +21,7 @@
 
 # Flujo de autenticación
 
-```mermaid
-sequenceDiagram
-    participant User as Usuario
-    participant App as App Web/Mobile
-    participant CIAM as CIAM
-    participant API as API Gateway
-    participant SVC as Servicio dominio
-
-    User->>App: Inicia sesión
-    App->>CIAM: Authorization Code + PKCE
-    CIAM-->>App: ID token / access token
-    App->>API: Request con access token
-    API->>CIAM: Valida JWKS/introspection
-    API->>SVC: Propaga identidad y scopes
-    SVC-->>API: Respuesta
-    API-->>App: Respuesta
-```
+![Security & IAM View](../assets/diagrams/archimate/06-security-iam-view.svg)
 
 # Controles mínimos para servicios críticos
 

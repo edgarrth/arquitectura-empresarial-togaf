@@ -19,20 +19,7 @@
 
 # Diagrama tecnológico
 
-```mermaid
-flowchart TD
-    DEV[Developers] --> REPO[Git Repositories]
-    REPO --> CI[CI Pipeline]
-    CI --> REG[Artifact Registry]
-    CI --> GITOPS[GitOps Repo]
-    GITOPS --> CD[Argo CD / GitOps Controller]
-    CD --> K8S[Kubernetes Platform]
-    K8S --> OBS[Observability Stack]
-    K8S --> SEC[Secrets / KMS]
-    K8S --> DATA[Managed Databases]
-    K8S --> EVT[Event Platform]
-    K8S --> API[API Management]
-```
+![Technology Platform View](../assets/diagrams/archimate/05-technology-platform-view.svg)
 
 # NFR base
 

@@ -41,7 +41,7 @@ No todo debe convertirse a ArchiMate. Para algunos casos es mejor conservar otro
 # Diagramas renderizados
 
 !!! note
-    El workflow de GitHub Actions renderiza los `.puml` a SVG antes de publicar GitHub Pages.
+    El workflow de GitHub Actions renderiza los `.puml` a SVG antes de publicar GitHub Pages. Estas imágenes SVG se generan durante el pipeline; por eso no necesariamente existirán en el repo antes de ejecutar el Action.
 
 ## Business Capability View
 

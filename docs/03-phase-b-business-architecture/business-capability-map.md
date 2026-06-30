@@ -2,50 +2,7 @@
 
 # Nivel 1
 
-```mermaid
-mindmap
-  root((Financial Services Enterprise))
-    Clientes
-      Onboarding
-      Identidad
-      Atención
-      Fidelización
-    Productos
-      Tarjetas
-      Crédito
-      Seguros asociados
-      Beneficios
-    Pagos
-      Autorización
-      Captura
-      Reversas
-      Disputas
-    Comercios
-      Afiliación
-      Liquidación
-      Portal comercio
-      Riesgo comercio
-    Riesgo
-      Riesgo crediticio
-      Riesgo transaccional
-      Antifraude
-      Cobranza
-    Operaciones
-      Conciliación
-      Contabilidad
-      Backoffice
-      Reclamos
-    Datos
-      Gobierno de datos
-      Analítica
-      Modelos IA
-      Reportería regulatoria
-    Plataforma
-      APIs
-      Eventos
-      Observabilidad
-      CI/CD
-```
+![Business Capability View](../assets/diagrams/archimate/01-business-capability-view.svg)
 
 # Capacidades priorizadas
 

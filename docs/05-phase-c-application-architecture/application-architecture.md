@@ -2,17 +2,7 @@
 
 # Capas objetivo
 
-```mermaid
-flowchart TD
-    CH[Canales digitales] --> APIGW[API Gateway / API Management]
-    PARTNERS[Partners / Comercios] --> APIGW
-    APIGW --> BFF[BFF / Experience APIs]
-    BFF --> DOM[Domain Services]
-    DOM --> SHARED[Shared Capabilities]
-    DOM --> CORE[Core / Procesador / Legado]
-    DOM --> EVENTS[Event Platform]
-    EVENTS --> DATA[Data Platform]
-```
+![Application Cooperation View](../assets/diagrams/archimate/03-application-cooperation-view.svg)
 
 # Dominios de aplicación
 
