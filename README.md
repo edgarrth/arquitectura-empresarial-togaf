@@ -66,4 +66,4 @@ mkdocs serve
 
 ## Diagramas ArchiMate
 
-El repositorio incluye vistas ArchiMate en `docs/16-diagrams/archimate`. El workflow de GitHub Actions las renderiza a SVG y las publica en GitHub Pages.
+El repositorio incluye vistas ArchiMate en `docs/15-diagrams/archimate`. El workflow de GitHub Actions las renderiza a SVG y las publica en GitHub Pages.

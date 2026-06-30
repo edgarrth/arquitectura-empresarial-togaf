@@ -45,11 +45,11 @@ jobs:
         run: |
           mkdir -p docs/assets/diagrams/archimate
           mkdir -p docs/assets/diagrams/plantuml
-          if ls docs/16-diagrams/archimate/*.puml 1> /dev/null 2>&1; then
-            java -jar plantuml.jar -tsvg -o ../../assets/diagrams/archimate docs/16-diagrams/archimate/*.puml
+          if ls docs/15-diagrams/archimate/*.puml 1> /dev/null 2>&1; then
+            java -jar plantuml.jar -tsvg -o ../../assets/diagrams/archimate docs/15-diagrams/archimate/*.puml
           fi
-          if ls docs/16-diagrams/plantuml/*.puml 1> /dev/null 2>&1; then
-            java -jar plantuml.jar -tsvg -o ../../assets/diagrams/plantuml docs/16-diagrams/plantuml/*.puml
+          if ls docs/15-diagrams/plantuml/*.puml 1> /dev/null 2>&1; then
+            java -jar plantuml.jar -tsvg -o ../../assets/diagrams/plantuml docs/15-diagrams/plantuml/*.puml
           fi
 
       - name: Build MkDocs site
