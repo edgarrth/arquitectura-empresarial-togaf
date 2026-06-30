@@ -80,24 +80,24 @@ nav:
       - IAM & CIAM: 12-security-architecture/iam-ciam.md
 
   - Estándares:
-      - API Standards: 14-standards/api-standards.md
-      - Event Standards: 14-standards/event-standards.md
-      - Observability Standards: 14-standards/observability-standards.md
+      - API Standards: 13-standards/api-standards.md
+      - Event Standards: 13-standards/event-standards.md
+      - Observability Standards: 13-standards/observability-standards.md
 
   - ADRs:
-      - ADR-001 CIAM: 15-adrs/ADR-001-ciam-platform.md
-      - ADR-002 Event Platform: 15-adrs/ADR-002-event-platform.md
-      - ADR-003 API Management: 15-adrs/ADR-003-api-management.md
+      - ADR-001 CIAM: 14-adrs/ADR-001-ciam-platform.md
+      - ADR-002 Event Platform: 14-adrs/ADR-002-event-platform.md
+      - ADR-003 API Management: 14-adrs/ADR-003-api-management.md
 
   - Diagramas:
-      - ArchiMate Views: 16-diagrams/archimate/archimate-views.md
-      - Contexto Mermaid: 16-diagrams/mermaid/architecture-context.md
+      - ArchiMate Views: 15-diagrams/archimate/archimate-views.md
+      - Contexto Mermaid: 15-diagrams/mermaid/architecture-context.md
 
   - Plantillas:
-      - ADR Template: 17-templates/ADR-template.md
+      - ADR Template: 16-templates/ADR-template.md
 
   - Decisiones:
-      - Technology Radar: 18-decisions/technology-radar.md
+      - Technology Radar: 17-decisions/technology-radar.md
 
   - Roadmap:
-      - Enterprise Roadmap: 19-roadmap/enterprise-roadmap.md
+      - Enterprise Roadmap: 18-roadmap/enterprise-roadmap.md
