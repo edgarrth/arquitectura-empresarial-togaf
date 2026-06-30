@@ -1,5 +1,8 @@
 # Principios de arquitectura
 
+La empresa adopta los siguientes principios de arquitectura para guiar la toma de decisiones tecnológicas y 
+garantizar alineación con la estrategia de negocio.
+
 # Principios corporativos
 
 | ID | Principio | Declaración | Implicación |

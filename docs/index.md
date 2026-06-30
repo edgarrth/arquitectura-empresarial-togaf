@@ -1,6 +1,7 @@
 # TOGAF Financial Enterprise Architecture Blueprint
 
-Este sitio documenta una implementación práctica de arquitectura empresarial para una organización financiera de tarjetas, pagos, crédito, comercios y canales digitales.
+Este sitio documenta una implementación práctica de arquitectura 
+empresarial para una organización financiera de tarjetas, pagos, crédito, comercios y canales digitales.
 
 # Propósito
 

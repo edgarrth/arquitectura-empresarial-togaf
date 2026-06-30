@@ -2,20 +2,20 @@
 
 # Plataforma objetivo
 
-| Capa | Decisión base |
-|---|---|
+| Capa | Decisión base                                |
+|---|----------------------------------------------|
 | Runtime aplicaciones | Kubernetes administrado o plataforma equivalente |
-| APIs | API Gateway + Developer Portal |
-| Eventos | Kafka-compatible event streaming |
+| APIs | API Manager + Developer Portal               |
+| Eventos | Kafka-compatible event streaming             |
 | Datos transaccionales | Base relacional administrada para consistencia |
-| Datos documentales | Base documental para agregados flexibles |
-| Cache | Redis-compatible |
+| Datos documentales | Base documental para agregados flexibles     |
+| Cache | Redis-compatible                             |
 | Observabilidad | OpenTelemetry, Prometheus, Loki, Tempo/Grafana |
-| Secrets | Vault/KMS/Secret Manager |
-| CI/CD | GitHub Actions/GitLab CI + GitOps |
-| Seguridad | OIDC, OAuth2, mTLS interno donde aplique |
-| IaC | Terraform/OpenTofu |
-| Policy as Code | OPA/Kyverno |
+| Secrets | Vault/KMS/Secret Manager                     |
+| CI/CD | GitHub Actions/GitLab CI + GitOps            |
+| Seguridad | OIDC, OAuth2, mTLS interno donde aplique     |
+| IaC | Terraform y Ansible                          |
+| Policy as Code | Kyverno                                      |
 
 # Diagrama tecnológico
 

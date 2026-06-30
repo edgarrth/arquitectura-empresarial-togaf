@@ -2,7 +2,8 @@
 
 # Enfoque
 
-Los requerimientos arquitectónicos se gestionan de forma continua durante todo el ADM.
+Los requerimientos arquitectónicos se gestionan de forma continua durante 
+todo el ADM.
 
 # Categorías
 

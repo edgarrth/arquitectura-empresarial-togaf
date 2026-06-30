@@ -1,5 +1,6 @@
 # Plan de adopción
 
+Estos son las fases propuestas para implementar este framework 
 ## Semana 1: Preparación
 
 - Definir sponsor ejecutivo.

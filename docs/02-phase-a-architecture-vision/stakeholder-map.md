@@ -1,5 +1,6 @@
 # Stakeholder Map
 
+
 # Stakeholders clave
 
 | Stakeholder | Interés | Preocupación | Entregable relevante |

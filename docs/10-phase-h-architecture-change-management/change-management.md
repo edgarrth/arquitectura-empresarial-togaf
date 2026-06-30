@@ -2,7 +2,8 @@
 
 # Propósito
 
-Gestionar cambios en la arquitectura objetivo sin perder control ni bloquear evolución del negocio.
+Gestionar cambios en la arquitectura objetivo sin perder control 
+ni bloquear evolución del negocio.
 
 # Tipos de cambio
 

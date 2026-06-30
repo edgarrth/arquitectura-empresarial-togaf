@@ -6,7 +6,7 @@ TOGAF ADM es un framework iterativo. Para este caso de uso,
 la implementación evitará caer en una ejecución waterfall pesada. 
 Las fases se usan como marco de pensamiento y como checklist de entregables.
 
-![img.png](../Imagenes/00-togaf-adm.png)
+![img.png](../16-diagrams/Imagenes/00-togaf-adm.png)
 ```mermaid
 flowchart LR
     P[Preliminary] --> A[Phase A: Architecture Vision]

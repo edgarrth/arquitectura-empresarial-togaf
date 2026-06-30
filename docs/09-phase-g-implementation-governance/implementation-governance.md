@@ -18,16 +18,16 @@ Asegurar que las iniciativas implementen la arquitectura aprobada, gestionen exc
 
 Cada iniciativa crítica debe documentar:
 
-- alcance;
-- capacidades impactadas;
-- arquitectura target;
-- decisiones ADR;
-- riesgos aceptados;
-- excepciones;
-- NFRs;
-- owners;
-- plan de operación;
-- criterios de salida.
+- alcance
+- capacidades impactadas
+- arquitectura target
+- decisiones ADR
+- riesgos aceptados
+- excepciones
+- NFRs
+- owners
+- plan de operación
+- criterios de salida
 
 # Compliance checklist
 

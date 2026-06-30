@@ -2,7 +2,9 @@
 
 # Plataforma como producto
 
-La plataforma interna debe ofrecer capacidades reutilizables para que los squads entreguen software seguro, observable y gobernado sin reinventar infraestructura.
+La plataforma interna debe ofrecer capacidades reutilizables 
+para que los squads entreguen software seguro, observable y 
+gobernado sin reinventar infraestructura.
 
 # Capacidades de plataforma
 

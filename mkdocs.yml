@@ -31,12 +31,13 @@ nav:
   - Inicio: index.md
 
   - Introducción:
-      - Roadmap: 00-introduction/roadmap.md
+      - Roadmap: 00-introduction/repository-roadmap.md
       - Mapa ADM: 00-introduction/adm-map.md
 
   - Preliminary:
       - Capability de arquitectura: 01-preliminary/architecture-capability.md
       - Principios: 01-preliminary/architecture-principles.md
+      - Architecture Board: 01-preliminary/architecture-board.md
 
   - Phase A:
       - Architecture Vision: 02-phase-a-architecture-vision/architecture-vision.md
@@ -66,6 +67,7 @@ nav:
 
   - Phase G:
       - Implementation Governance: 09-phase-g-implementation-governance/implementation-governance.md
+      - Architecture review Checklist: 09-phase-g-implementation-governance/architecture-review-checklist.md
 
   - Phase H:
       - Change Management: 10-phase-h-architecture-change-management/change-management.md
@@ -77,9 +79,6 @@ nav:
       - Security Architecture: 12-security-architecture/security-architecture.md
       - IAM & CIAM: 12-security-architecture/iam-ciam.md
 
-  - Gobierno:
-      - Architecture Board: 13-governance/architecture-board.md
-      - Review Checklist: 13-governance/architecture-review-checklist.md
 
   - Estándares:
       - API Standards: 14-standards/api-standards.md
