@@ -34,11 +34,22 @@ No todo debe convertirse a ArchiMate. Para algunos casos es mejor conservar otro
 | Payment Value Stream View | `02-payment-value-stream-view.puml` | Phase B - Business Architecture |
 | Application Cooperation View | `03-application-cooperation-view.puml` | Phase C Application |
 | Data Architecture View | `04-data-architecture-view.puml` | Phase C Data |
-| Technology Platform View | `05-technology-platform-view.puml` | Phase D / Platform Architecture |
+| Technology Platform View | `05-technology-platform-view.puml` | Phase D - Vista general de plataforma |
 | Security & IAM View | `06-security-iam-view.puml` | Security Architecture |
 | Migration Roadmap View | `07-migration-roadmap-view.puml` | Phase F - Migration Planning |
 | Architecture Vision View | `08-architecture-vision-view.puml` | Phase A - Architecture Vision |
 | Integration Architecture View | `09-integration-architecture-view.puml` | Phase C Application - Integration |
+
+# Regla de uso para Platform Architecture
+
+En `platform-architecture.md` se usan dos notaciones:
+
+| Diagrama | Notación | Razón |
+|---|---|---|
+| Vista general de plataforma | ArchiMate | Muestra componentes, servicios y nodos tecnológicos |
+| Golden path de microservicio | Mermaid sequence | Muestra una secuencia temporal de pasos |
+
+El golden path no debe migrarse a ArchiMate porque no describe una estructura empresarial estable, sino un flujo operativo.
 
 # Diagramas renderizados
 
