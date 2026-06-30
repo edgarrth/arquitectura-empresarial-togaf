@@ -2,40 +2,23 @@
 
 # Value streams principales
 
+La arquitectura de negocio se estructura alrededor de tres value streams principales: adquirir cliente, procesar pago y afiliar comercio. La siguiente vista ArchiMate representa el value stream de pagos porque es el flujo más crítico para una organización financiera de tarjetas, comercios y pagos digitales.
+
+![Payment Value Stream View](../assets/diagrams/archimate/02-payment-value-stream-view.svg)
+
+# Value streams cubiertos
+
 ## 1. Adquirir cliente
 
-```mermaid
-flowchart LR
-    A[Prospecto] --> B[Registro digital]
-    B --> C[Validación identidad]
-    C --> D[Evaluación riesgo]
-    D --> E[Aprobación]
-    E --> F[Activación producto]
-```
+Objetivo: convertir un prospecto en cliente activo mediante registro digital, validación de identidad, evaluación de riesgo, aprobación y activación de producto.
 
 ## 2. Procesar pago
 
-```mermaid
-flowchart LR
-    A[Cliente inicia pago] --> B[Autenticación / tokenización]
-    B --> C[Autorización]
-    C --> D[Antifraude]
-    D --> E[Procesamiento]
-    E --> F[Confirmación]
-    F --> G[Conciliación]
-    G --> H[Liquidación]
-```
+Objetivo: autorizar, evaluar riesgo/fraude, procesar, confirmar, conciliar y liquidar una transacción financiera.
 
 ## 3. Afiliar comercio
 
-```mermaid
-flowchart LR
-    A[Solicitud comercio] --> B[Validación KYC/KYB]
-    B --> C[Evaluación riesgo]
-    C --> D[Configuración condiciones]
-    D --> E[Alta en plataforma]
-    E --> F[Operación y liquidación]
-```
+Objetivo: registrar, validar, evaluar, configurar y habilitar un comercio para operar dentro del ecosistema financiero.
 
 # Modelo operativo objetivo
 

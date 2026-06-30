@@ -1,0 +1,67 @@
+@startuml
+!include <archimate/Archimate>
+title Architecture Vision View - Financial Enterprise
+
+left to right direction
+
+Business_Actor(customer, "Cliente")
+Business_Actor(merchant, "Comercio afiliado")
+Business_Actor(operations, "Operaciones")
+Business_Actor(risk_area, "Riesgos")
+Business_Actor(compliance, "Compliance")
+
+Business_Service(digital_financial_services, "Servicios financieros digitales")
+Business_Service(merchant_services, "Servicios para comercios")
+Business_Service(risk_fraud_services, "Servicios de riesgo y fraude")
+Business_Service(operational_services, "Servicios operativos financieros")
+
+Application_Component(digital_channels, "Canales Web / Mobile")
+Application_Component(api_platform, "API Platform")
+Application_Component(ciam, "CIAM / IAM")
+Application_Component(domain_services, "Servicios de dominio")
+Application_Component(event_platform, "Event Platform")
+Application_Component(data_platform, "Data Platform")
+Application_Component(core, "Core legado / procesador")
+Application_Component(analytics_ai, "Analytics / IA")
+
+Application_Service(identity_service, "Identidad digital")
+Application_Service(payment_service, "Pagos digitales")
+Application_Service(card_service, "Gestión de tarjetas")
+Application_Service(merchant_service, "Gestión de comercios")
+Application_Service(risk_service, "Decisión de riesgo")
+Application_Service(fraud_service, "Antifraude")
+Application_Service(settlement_service, "Conciliación y liquidación")
+Application_Service(data_service, "Data products")
+
+Rel_Serving(digital_financial_services, customer)
+Rel_Serving(merchant_services, merchant)
+Rel_Serving(risk_fraud_services, risk_area)
+Rel_Serving(operational_services, operations)
+Rel_Serving(operational_services, compliance)
+
+Rel_Realization(digital_channels, digital_financial_services)
+Rel_Realization(api_platform, digital_financial_services)
+Rel_Realization(domain_services, digital_financial_services)
+Rel_Realization(domain_services, merchant_services)
+Rel_Realization(domain_services, risk_fraud_services)
+Rel_Realization(domain_services, operational_services)
+
+Rel_Serving(ciam, identity_service)
+Rel_Serving(domain_services, payment_service)
+Rel_Serving(domain_services, card_service)
+Rel_Serving(domain_services, merchant_service)
+Rel_Serving(domain_services, risk_service)
+Rel_Serving(domain_services, fraud_service)
+Rel_Serving(domain_services, settlement_service)
+Rel_Serving(data_platform, data_service)
+
+Rel_Flow(customer, digital_channels)
+Rel_Flow(merchant, api_platform)
+Rel_Flow(digital_channels, api_platform)
+Rel_Flow(api_platform, ciam)
+Rel_Flow(api_platform, domain_services)
+Rel_Flow(domain_services, event_platform)
+Rel_Flow(domain_services, core)
+Rel_Flow(event_platform, data_platform)
+Rel_Flow(data_platform, analytics_ai)
+@enduml

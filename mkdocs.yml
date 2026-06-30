@@ -31,7 +31,7 @@ nav:
   - Inicio: index.md
 
   - Introducción:
-      - Roadmap: 00-introduction/repository-roadmap.md
+      - Roadmap del repositorio: 00-introduction/roadmap.md
       - Mapa ADM: 00-introduction/adm-map.md
 
   - Preliminary:
@@ -67,7 +67,7 @@ nav:
 
   - Phase G:
       - Implementation Governance: 09-phase-g-implementation-governance/implementation-governance.md
-      - Architecture review Checklist: 09-phase-g-implementation-governance/architecture-review-checklist.md
+      - Architecture Review Checklist: 09-phase-g-implementation-governance/architecture-review-checklist.md
 
   - Phase H:
       - Change Management: 10-phase-h-architecture-change-management/change-management.md
@@ -78,7 +78,6 @@ nav:
   - Seguridad:
       - Security Architecture: 12-security-architecture/security-architecture.md
       - IAM & CIAM: 12-security-architecture/iam-ciam.md
-
 
   - Estándares:
       - API Standards: 14-standards/api-standards.md
@@ -91,8 +90,8 @@ nav:
       - ADR-003 API Management: 15-adrs/ADR-003-api-management.md
 
   - Diagramas:
-      - Contexto Mermaid: 16-diagrams/mermaid/architecture-context.md
       - ArchiMate Views: 16-diagrams/archimate/archimate-views.md
+      - Contexto Mermaid: 16-diagrams/mermaid/architecture-context.md
 
   - Plantillas:
       - ADR Template: 17-templates/ADR-template.md

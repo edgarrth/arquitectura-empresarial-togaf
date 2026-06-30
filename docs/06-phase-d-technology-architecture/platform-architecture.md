@@ -2,9 +2,7 @@
 
 # Plataforma como producto
 
-La plataforma interna debe ofrecer capacidades reutilizables 
-para que los squads entreguen software seguro, observable y 
-gobernado sin reinventar infraestructura.
+La plataforma interna debe ofrecer capacidades reutilizables para que los squads entreguen software seguro, observable y gobernado sin reinventar infraestructura.
 
 # Capacidades de plataforma
 
@@ -20,27 +18,20 @@ gobernado sin reinventar infraestructura.
 | Runtime | Kubernetes, service mesh y autoscaling |
 | FinOps | Cost visibility y tagging obligatorio |
 
+# Vista tecnológica de plataforma
+
+Esta vista ArchiMate muestra la relación entre developer portal, repositorios, CI/CD, GitOps, Kubernetes, observabilidad, secretos, políticas y servicios administrados.
+
+![Technology Platform View](../assets/diagrams/archimate/05-technology-platform-view.svg)
+
 # Golden path de microservicio
 
-```mermaid
-sequenceDiagram
-    participant Dev as Developer
-    participant Portal as Developer Portal
-    participant Repo as Git Repository
-    participant CI as CI Pipeline
-    participant Sec as Security Scanning
-    participant GitOps as GitOps
-    participant K8s as Kubernetes
-
-    Dev->>Portal: Selecciona template de microservicio
-    Portal->>Repo: Crea repositorio con estándar
-    Repo->>CI: Ejecuta pipeline
-    CI->>Sec: SAST, dependency scan, container scan
-    Sec-->>CI: Resultado
-    CI->>GitOps: Publica manifiestos
-    GitOps->>K8s: Despliega
-    K8s-->>Dev: Servicio observable y registrado
-```
+1. El desarrollador selecciona un template en el Developer Portal.
+2. El portal crea el repositorio con estructura estándar.
+3. El pipeline ejecuta build, tests y security scanning.
+4. El artefacto se publica en el registry.
+5. GitOps sincroniza manifiestos con Kubernetes.
+6. El servicio queda desplegado, observable y registrado en el catálogo.
 
 # Scorecard mínimo
 

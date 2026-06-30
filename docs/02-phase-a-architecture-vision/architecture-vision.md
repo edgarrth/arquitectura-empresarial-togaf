@@ -2,9 +2,7 @@
 
 # Problema
 
-La organización opera con sistemas core, canales digitales, 
-integraciones con terceros, procesos batch y plataformas de datos que han 
-crecido de manera heterogénea. Esto genera:
+La organización opera con sistemas core, canales digitales, integraciones con terceros, procesos batch y plataformas de datos que han crecido de manera heterogénea. Esto genera:
 
 - time-to-market lento;
 - duplicidad de capacidades;
@@ -16,9 +14,7 @@ crecido de manera heterogénea. Esto genera:
 
 # Visión objetivo
 
-Construir una arquitectura empresarial modular, segura, observable y orientada 
-a capacidades, que permita acelerar productos financieros digitales, 
-mejorar resiliencia operativa y reducir riesgo tecnológico.
+Construir una arquitectura empresarial modular, segura, observable y orientada a capacidades, que permita acelerar productos financieros digitales, mejorar resiliencia operativa y reducir riesgo tecnológico.
 
 # Drivers de negocio
 
@@ -34,6 +30,7 @@ mejorar resiliencia operativa y reducir riesgo tecnológico.
 # Alcance inicial
 
 Incluye:
+
 - canales digitales;
 - onboarding y originación;
 - autorización y autenticación;
@@ -54,23 +51,9 @@ Incluye:
 
 # Arquitectura conceptual
 
-```mermaid
-flowchart LR
-    C[Clientes] --> CH[Canales Web / Mobile]
-    M[Comercios] --> APIP[API Platform]
-    CH --> APIP
-    APIP --> CIAM[CIAM / IAM]
-    APIP --> DOM[Dominios de negocio]
-    DOM --> PAY[Pagos]
-    DOM --> CARD[Tarjetas]
-    DOM --> RISK[Riesgo]
-    DOM --> FRAUD[Antifraude]
-    DOM --> SETT[Conciliación y liquidación]
-    DOM --> EVT[Event Platform]
-    EVT --> DATA[Data Platform]
-    DOM --> CORE[Core legado / procesador]
-    DATA --> BI[Analytics / IA]
-```
+Esta vista muestra la visión objetivo usando ArchiMate: actores de negocio, servicios de negocio, componentes de aplicación y servicios de aplicación que soportan la arquitectura empresarial financiera.
+
+![Architecture Vision View](../assets/diagrams/archimate/08-architecture-vision-view.svg)
 
 # Criterios de éxito
 

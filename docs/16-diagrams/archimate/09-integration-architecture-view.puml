@@ -1,0 +1,61 @@
+@startuml
+!include <archimate/Archimate>
+title Integration Architecture View
+
+left to right direction
+
+Business_Actor(customer, "Cliente")
+Business_Actor(partner, "Partner / Comercio")
+Business_Actor(operations, "Operaciones")
+
+Application_Component(channels, "Canales digitales")
+Application_Component(partner_apps, "Aplicaciones de partners")
+Application_Component(api_gateway, "API Management / Gateway")
+Application_Component(domain_services, "Servicios de dominio")
+Application_Component(event_bus, "Event Bus")
+Application_Component(core, "Core legado")
+Application_Component(cdc, "CDC / Transactional Outbox")
+Application_Component(consumers, "Consumers / Workers")
+Application_Component(data_platform, "Data Platform")
+Application_Component(dlq, "Dead Letter Queue")
+Application_Component(observability, "Observability")
+
+Application_Service(sync_api, "APIs sincrónicas")
+Application_Service(business_events, "Eventos de negocio")
+Application_Service(batch_files, "Batch / Files managed")
+Application_Service(cdc_service, "CDC stream")
+Application_Service(error_handling, "Gestión de errores")
+Application_Service(traceability, "Trazabilidad")
+
+Business_Object(api_contract, "Contrato API")
+Business_Object(event_contract, "Contrato evento")
+Business_Object(correlation_id, "Correlation ID")
+Business_Object(error_event, "Evento de error")
+
+Rel_Flow(customer, channels)
+Rel_Flow(partner, partner_apps)
+Rel_Flow(channels, api_gateway)
+Rel_Flow(partner_apps, api_gateway)
+Rel_Flow(api_gateway, domain_services)
+Rel_Flow(domain_services, event_bus)
+Rel_Flow(domain_services, core)
+Rel_Flow(core, cdc)
+Rel_Flow(cdc, event_bus)
+Rel_Flow(event_bus, consumers)
+Rel_Flow(event_bus, dlq)
+Rel_Flow(consumers, data_platform)
+Rel_Flow(domain_services, observability)
+Rel_Flow(event_bus, observability)
+
+Rel_Serving(api_gateway, sync_api)
+Rel_Serving(event_bus, business_events)
+Rel_Serving(core, batch_files)
+Rel_Serving(cdc, cdc_service)
+Rel_Serving(dlq, error_handling)
+Rel_Serving(observability, traceability)
+
+Rel_Access(api_gateway, api_contract)
+Rel_Access(event_bus, event_contract)
+Rel_Access(observability, correlation_id)
+Rel_Access(dlq, error_event)
+@enduml

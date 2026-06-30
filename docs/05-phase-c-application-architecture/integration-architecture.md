@@ -12,19 +12,9 @@
 
 # Arquitectura objetivo
 
-```mermaid
-flowchart LR
-    A[Canales] --> GW[API Gateway]
-    P[Partners] --> GW
-    GW --> SVC[Servicios dominio]
-    SVC --> BUS[Event Bus]
-    SVC --> CORE[Core legado]
-    CORE --> CDC[CDC]
-    CDC --> BUS
-    BUS --> CON[Consumers]
-    BUS --> DLQ[Dead Letter Queue]
-    CON --> DATA[Data Platform]
-```
+Esta vista ArchiMate representa la cooperación entre canales, API Management, servicios de dominio, core legado, CDC, event bus, consumidores y plataforma de datos.
+
+![Integration Architecture View](../assets/diagrams/archimate/09-integration-architecture-view.svg)
 
 # Reglas
 
