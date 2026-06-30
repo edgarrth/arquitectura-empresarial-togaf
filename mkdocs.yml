@@ -7,9 +7,9 @@ theme:
   name: material
   language: es
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.top
     - content.code.copy
     - search.highlight
 
@@ -92,8 +92,8 @@ nav:
       - ADR-003 API Management: 15-adrs/ADR-003-api-management.md
 
   - Diagramas:
-      - Vistas ArchiMate: 16-diagrams/archimate/archimate-views.md
       - Contexto Mermaid: 16-diagrams/mermaid/architecture-context.md
+      - ArchiMate Views: 16-diagrams/archimate/archimate-views.md
 
   - Plantillas:
       - ADR Template: 17-templates/ADR-template.md
